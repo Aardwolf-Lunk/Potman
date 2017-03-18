@@ -15,11 +15,13 @@
    save_state="y"
    date_written="2017-03-18 02:03:25"
    requires="4.98"
-   version="1.0"
+   version="1.1"
    >
 <description trim="y">
 <![CDATA[
 potman help
+
+potman  --->  displays potman bag and potions
 
 potmanbag *  --->  sets potions bag to *
 
@@ -76,6 +78,19 @@ sell cl  --->  gets all clear elixir potions from potions bag and sells them
   <send>SetVariable ("potion_bag", "%1")
 ColourNote ("red", "blue", "potman bag set to : %1")</send>
   </alias>
+  <alias
+   match="potman"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>
+  ColourNote("yellow", "", "potman bag : " .. GetVariable("potion_bag"))
+  ColourNote("yellow", "", "potman heal potion : " .. GetVariable("potion_heal"))
+  ColourNote("yellow", "", "potman lotus potion : " .. GetVariable("potion_lotus"))
+  ColourNote("yellow", "", "potman refresh potion : " .. GetVariable("potion_refresh"))</send>
+  </alias>
+
   <alias
    match="pheal *"
    enabled="y"
