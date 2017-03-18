@@ -32,7 +32,7 @@ plb   --->  puts all lotus potions in potions bag
 prb   --->  puts all refresh potion in potions bag
 pshb  --->  puts all shadowbane potions in potions bag
 pwob  --->  puts all eyes of the wolf potions in potions bag
-psib  ---> puts all sight beyond sight potions in potions bag
+psib  --->  puts all sight beyond sight potions in potions bag
 pgrb  --->  puts all griffons blood potions in potions bag
 pclb  --->  puts all clear elixir potions in potions bag
 
