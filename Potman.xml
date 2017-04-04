@@ -23,7 +23,7 @@ potman help
 
 potman  --->  displays potman bag and potions
 
-potmanbag *  --->  sets potions bag to *
+potman bag *  --->  sets potions bag to *
 
 pheal *     --->  sets healing potion to *
 plotus *    --->  sets mana potion to *
