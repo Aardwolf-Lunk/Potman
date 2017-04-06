@@ -23,7 +23,7 @@ potman help
 
 potman  --->  displays potman bag and potions
 
-potman bag *  --->  sets potions bag to *
+potmanbag *  --->  sets potions bag to *
 
 pheal *     --->  sets healing potion to *
 plotus *    --->  sets mana potion to *
@@ -34,6 +34,7 @@ plb   --->  puts all lotus potions in potions bag
 prb   --->  puts all refresh potions in potions bag
 pshb  --->  puts all shadowbane potions in potions bag
 pwob  --->  puts all eyes of the wolf potions in potions bag
+palb  --->  puts all eyes of allegiance potions in potions bag
 psib  --->  puts all sight beyond sight potions in potions bag
 pgrb  --->  puts all griffons blood potions in potions bag
 pclb  --->  puts all clear elixir potions in potions bag
@@ -43,6 +44,7 @@ ql   --->  gets a lotus potion from potions bag and quaffs it
 qr   --->  gets a refresh potion from potions bag and quaffs it
 qsh  --->  gets a shadowbane potion from potions bag and quaffs it
 qwo  --->  gets an eyes of the wolf potion from potions bag and quaffs it
+qal  --->  gets an eyes of allegiance potion from potions bag and quaffs it
 qsi  --->  gets a sight beyond sight potion from potions bag and quaffs it
 qgr  --->  gets a griffons blood potion from potions bag and quaffs it
 qcl  --->  gets a clear elixir potion from potions bag and quaffs it
@@ -52,6 +54,7 @@ sell mn  --->  gets all lotus potions from potions bag and sells them
 sell mv  --->  gets all refresh potions from potions bag and sells them
 sell sh  --->  gets all shadowbane potions from potions bag and sells them
 sell wo  --->  gets all eyes of the wolf potions from potions bag and sells them
+sell al  --->  gets all eyes of allegiance potions from potions bag and sells them
 sell si  --->  gets all sight beyond sight potions from potions bag and sells them
 sell gr  --->  gets all griffon's blood potions from potions bag and sells them
 sell cl  --->  gets all clear elixir potions from potions bag and sells them
@@ -144,6 +147,14 @@ ColourNote ("red", "blue", "potman refresh potion set to : %1")</send>
   <send>put all.@potion_lotus @potion_bag</send>
   </alias>
   <alias
+   match="palb"
+   enabled="y"
+   expand_variables="y"
+   sequence="100"
+  >
+  <send>put all.allegiance @potion_bag</send>
+  </alias>
+  <alias
    match="lpb"
    enabled="y"
    expand_variables="y"
@@ -200,6 +211,15 @@ ColourNote ("red", "blue", "potman refresh potion set to : %1")</send>
   >
   <send>get clear @potion_bag
 quaff clear</send>
+  </alias>
+  <alias
+   match="qal"
+   enabled="y"
+   expand_variables="y"
+   sequence="100"
+  >
+  <send>get allegiance @potion_bag
+quaff allegiance</send>
   </alias>
   <alias
    match="ql"
@@ -292,7 +312,15 @@ sell all.@potion_heal</send>
   <send>get all.griffon @potion_bag
 sell all.griffon</send>
   </alias>
-
+  <alias
+   match="sell al"
+   enabled="y"
+   expand_variables="y"
+   sequence="100"
+  >
+  <send>get all.allegiance @potion_bag
+sell all.allegiance</send>
+  </alias>
   <alias
    match="sell mn"
    enabled="y"
