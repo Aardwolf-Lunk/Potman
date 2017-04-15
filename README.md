@@ -5,7 +5,7 @@ use potman help in game to bring up this help :
 
 potman help
 
-potmanbag *  --->  sets potions bag to *
+potman bag *  --->  sets potions bag to *
 
 pheal *     --->  sets healing potion to *
 plotus *    --->  sets mana potion to *
