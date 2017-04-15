@@ -23,7 +23,7 @@ potman help
 
 potman  --->  displays potman bag and potions
 
-potmanbag *  --->  sets potions bag to *
+potman bag *  --->  sets potions bag to *
 
 pheal *     --->  sets healing potion to *
 plotus *    --->  sets mana potion to *
@@ -387,6 +387,44 @@ sell all.wolf</send>
 
 <script>
 <![CDATA[
+function OnPluginInstall ()
+	OnPluginEnable ()
+end
+
+function OnPluginEnable ()
+	potion_bag = GetVariable ("potion_bag")
+	if potion_bag == nil then
+		SetVariable ("potion_bag", "bag")
+	end
+	potion_refresh = GetVariable ("potion_bag")
+
+	potion_heal = GetVariable ("potion_heal")
+	if potion_heal == nil then
+		SetVariable ("potion_heal", "heal")
+	end
+	potion_heal = GetVariable ("potion_heal")
+	
+	potion_lotus = GetVariable ("potion_lotus")
+	if potion_lotus == nil then
+		SetVariable ("potion_lotus", "lotus")
+	end
+	potion_lotus = GetVariable ("potion_lotus")
+	
+	potion_refresh = GetVariable ("potion_refresh")
+	if potion_refresh == nil then
+		SetVariable ("potion_refresh", "refresh")
+	end
+	potion_refresh = GetVariable ("potion_refresh")
+end
+
+function OnPluginSaveState ()
+	SetVariable ("potion_bag", potion_bag)
+	SetVariable ("potion_heal", potion_heal)
+	SetVariable ("potion_lotus", potion_lotus)
+	SetVariable ("potion_refresh", potion_refresh)
+end
+
+
 function OnHelp ()
   world.Note (world.GetPluginInfo (world.GetPluginID (), 3))
 end
